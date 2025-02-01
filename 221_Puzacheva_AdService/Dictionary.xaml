@@ -2,37 +2,61 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style
-        TargetType="Grid">
+    TargetType="Grid">
         <Setter Property="Background" Value="#FFFFFF"/>
     </Style>
 
     <Style
-        TargetType="Button">
+    TargetType="Button">
         <Setter Property="Background" Value="#FF9C1A"/>
-        <Setter Property="Height" Value="22"/>
-        <Setter Property="Padding" Value="-7"/>
-        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="Margin" Value="5"/>
         <Setter Property="FontFamily" Value="Tw Cen MT"/>
         <Setter Property="FontSize" Value="10"/>
     </Style>
 
     <Style
-        TargetType="Frame">
-        <Setter Property="Height" Value="350"/>
-        <Setter Property="Width" Value="800"/>
-    </Style>
-
-    <Style
-        TargetType="Image">
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="Margin" Value="10"/>
-    </Style>
-
-    <Style
-        TargetType="TextBlock">
-        <Setter Property="Height" Value="30"/>
+    TargetType="TextBlock">
+        <Setter Property="Height" Value="22"/>
         <Setter Property="Padding" Value="2"/>
-        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="FontFamily" Value="Tw Cen MT"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="#37474F"/>
+    </Style>
+
+    <Style
+    TargetType="TextBox">
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="FontFamily" Value="Tw Cen MT"/>
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <Style
+    TargetType="ComboBox">
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="Padding" Value="-1"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="FontFamily" Value="Tw Cen MT"/>
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <Style
+    TargetType="Label">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontFamily" Value="Tw Cen MT"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="#37474F"/>
+    </Style>
+
+    <Style
+    TargetType="PasswordBox">
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="Margin" Value="3"/>
         <Setter Property="FontFamily" Value="Tw Cen MT"/>
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="Foreground" Value="#37474F"/>

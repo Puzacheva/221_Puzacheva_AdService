@@ -1,0 +1,59 @@
+﻿<Page x:Class="_221_Puzacheva_AdService.Pages.AddAdPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_221_Puzacheva_AdService.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="440" d:DesignWidth="880"
+      Title="Создание объявления">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="149"></ColumnDefinition>
+            <ColumnDefinition Width="140"></ColumnDefinition>
+            <ColumnDefinition Width="160"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="180"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Content="Дата публикации"  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" />
+        <Label Grid.Column="1" Content="Город" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" />
+        <Label Grid.Column="1" Content="Категория"  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="3"/>
+        <Label Grid.Column="1" Content="Тип"  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="4"/>
+        <Label Grid.Column="1" Content="Статус"  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="5"/>
+
+        <DatePicker x:Name="PubliсationDatePicker" Grid.Column="2" Grid.Row="1" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="ComboBoxCity"  Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="0,3,0,0" ToolTip="Выберите город объявления"/>
+        <ComboBox x:Name="ComboBoxCateg"  Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="0,3,0,0"  ToolTip="Выберите категорию объявления"/>
+        <ComboBox x:Name="ComboBoxType"  Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="0,3,0,0"  ToolTip="Выберите тип объявления"/>
+        <ComboBox x:Name="ComboBoxStatus" SelectionChanged="ComboBoxStatus_SelectionChanged" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="0,3,0,0"  ToolTip="Выберите статус объявления"/>
+
+        <Label Grid.Column="3" Content="Название"  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" />
+        <Label Grid.Column="3" Content="Описание" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" />
+        <Label Grid.Column="3" Content="Цена"  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="3"/>
+        <Label Grid.Column="3" Content="Фото (необязательно)"  HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="4"/>
+
+        <TextBox x:Name="TextBoxTitle" Grid.Row="1" Grid.Column="4" Width="170" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" ToolTip="Введите название объявления" TextChanged="TextBoxTitle_Changed"/>
+        <TextBlock x:Name="txtHintTitle" Text="Название" Grid.Row="1" Grid.Column="4" Foreground="Gray" Height="28" Width="170" HorizontalAlignment="Left" Padding="4" VerticalAlignment="Top" Margin="0" IsHitTestVisible="False"/>
+        <TextBox x:Name="TextBoxDescription" Grid.Row="2" Grid.Column="4" Width="170" Height="35" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" ToolTip="Введите описание объявления" TextChanged="TextBoxDescription_Changed"/>
+        <TextBlock x:Name="txtHintDescription" Grid.Row="2" Grid.Column="4" Foreground="Gray" Text="Описание" Height="35" Width="170" Padding="4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" IsHitTestVisible="False"/>
+        <TextBox x:Name="TextBoxPrice" Grid.Row="3" Grid.Column="4" Width="110" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,3,0,0" ToolTip="Введите цену" TextChanged="TextBoxPrice_Changed"/>
+        <TextBlock x:Name="txtHintPrice" Grid.Row="3" Grid.Column="4" Foreground="Gray" Text="Цена" Width="110" HorizontalAlignment="Left" Padding="4" VerticalAlignment="Top" Margin="0,3,0,0" IsHitTestVisible="False"/>
+        <TextBox x:Name="TextBoxPhoto" Grid.Row="4" Grid.Column="4" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,3,0,0" ToolTip="Введите ссылку на фото" TextChanged="TextBoxPhoto_Changed"/>
+        <TextBlock x:Name="txtHintPhoto" Grid.Row="4" Grid.Column="4" Foreground="Gray" Text="Ссылка на фото" Width="150" Padding="4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,3,0,0" IsHitTestVisible="False"/>
+
+        <Button x:Name="ButtonCancel" Grid.Row="6" Grid.Column="2" Width="90" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Content="Отмена" ToolTip="Нажмите, чтобы вернуться к списку объявлений" Click="ButtonCancel_Click"/>
+        <Button x:Name="ButtonSave" Grid.Row="6" Grid.Column="3" Width="130" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0" Content="Сохранить" ToolTip="Нажмите, чтобы сохранить данные" Click="ButtonSave_Click"/>
+    </Grid>
+</Page>

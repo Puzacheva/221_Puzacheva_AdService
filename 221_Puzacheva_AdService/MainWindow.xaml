@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_221_Puzacheva_AdService"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="520" Width="880" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
@@ -13,7 +13,9 @@
             <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
         <Frame Name="MainFrame" Source="Pages/AllAdsPage.xaml" Navigated="MainFrame_Navigated" NavigationUIVisibility ="Hidden" Grid.Row="1"/>
-        <Button Grid.Row="0" Name="BackButton" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Center" Width="77" Click="BackButton_Click"/>
-        <Image Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Width="40" Source="C:\Users\79260\Downloads\google_ads_icon_136540.ico"/>
+        <Button Name="BackButton" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Center" Width="65" Click="BackButton_Click" Margin="8,0,0,0"/>
+        <Button Name="AuthButton" Content="Войти" HorizontalAlignment="Right" VerticalAlignment="Center" Width="70" Click="AuthButton_Click" Margin="0,0,50,0"/>
+        <Button Name="CompleteAdsButton" Content="Завершенные объявления" HorizontalAlignment="Right" VerticalAlignment="Center" Width="180" Click="CompleteAdsButton_Click"  Margin="0,0,50,0"/>
+        <Image Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Height="30" Width="40" Margin="10" Source="C:\Users\79260\Downloads\google_ads_icon_136540.ico"/>
     </Grid>
 </Window>

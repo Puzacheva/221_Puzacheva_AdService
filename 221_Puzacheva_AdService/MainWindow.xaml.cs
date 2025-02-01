@@ -21,6 +21,8 @@ namespace _221_Puzacheva_AdService
     /// </summary>
     public partial class MainWindow : Window
     {
+        private User _currentUser;
+
         protected override void OnClosing(CancelEventArgs e)
         {
             if (MessageBox.Show("Вы действительно хотите выйти из приложения?", "Предупреждение", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
@@ -43,6 +45,16 @@ namespace _221_Puzacheva_AdService
                 BackButton.Visibility = Visibility.Hidden;
             else
                 BackButton.Visibility = Visibility.Visible;
+
+            if (page is Pages.AllAdsPage)
+                AuthButton.Visibility = Visibility.Visible;
+            else
+                AuthButton.Visibility = Visibility.Hidden;
+
+            if (page is Pages.UserPage)
+                CompleteAdsButton.Visibility = Visibility.Visible;
+            else
+                CompleteAdsButton.Visibility = Visibility.Hidden;
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -50,5 +62,14 @@ namespace _221_Puzacheva_AdService
             if (MainFrame.CanGoBack) MainFrame.GoBack();
         }
 
+        private void AuthButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Pages.AuthPage());
+        }
+
+        private void CompleteAdsButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Pages.CompletedAdsPage(_currentUser)); 
+        }
     }
 }

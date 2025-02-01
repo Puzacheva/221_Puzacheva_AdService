@@ -1,4 +1,4 @@
-﻿<Page x:Class="_221_Puzacheva_AdService.Pages.AllAdsPage"
+﻿<Page x:Class="_221_Puzacheva_AdService.Pages.UserPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,15 +6,15 @@
       xmlns:local="clr-namespace:_221_Puzacheva_AdService.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="440" d:DesignWidth="880"
-      Title="Все объявления">
+      Title="Мои объявления">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="365"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <ListView x:Name="ListAds" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" Margin="0,10,0,0">
+        <ListView x:Name="ListAds" Grid.Row="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" SelectionChanged="ListAds_SelectionChanged">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -30,6 +30,7 @@
                             <RowDefinition Height="60"/>
                             <RowDefinition Height="20"/>
                             <RowDefinition Height="20"/>
+                            <RowDefinition Height="35"/>
                         </Grid.RowDefinitions>
 
                         <Image Grid.Row="0" Height="230" Width="250" Stretch="UniformToFill" HorizontalAlignment="Center" Margin="3">
@@ -46,23 +47,13 @@
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Height="auto" Width="250" TextWrapping="Wrap" Text="{Binding Description}" FontStyle="Italic" Foreground="#78909C"/>
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Text="{Binding Price, StringFormat={}{0} ₽}" Foreground="#78909C"/>
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4" Text="{Binding City}" Foreground="#78909C"/>
+                        <Button x:Name="EditButton" HorizontalAlignment="Right" VerticalAlignment="Center" Height="28" Width="100" Grid.Row="5" Content="Редактировать" Click="EditButton_Click"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
-        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0">
-            <TextBlock Text="Поиск по ключевым словам:"/>
-            <TextBox x:Name="TextBoxSearch" Width="100" ToolTip="Введите ключевое слово для поиска" TextChanged="TextBoxSearch_TextChanged"/>
-            <TextBlock  Text="Город:"/>
-            <ComboBox  x:Name="ComboBoxCity" Width="110" ToolTip="Выберите город объявлений" SelectionChanged="ComboBoxCity_SelectionChanged"/>
-            <TextBlock Text="Категория:"/>
-            <ComboBox x:Name="ComboBoxCateg" Width="120" ToolTip="Выберите категорию объявлений" SelectionChanged="ComboBoxCateg_SelectionChanged" />
-            <Button x:Name="ButtonClear" Width="125" Content="Очистить фильтры" ToolTip="Нажмите, чтобы очистить все фильтры" Click="ButtonClear_Click"/>
-            <TextBlock Text="Тип:" Width="34" Margin="170,0,0,0"/>
-            <ComboBox x:Name="ComboBoxType" Width="110" ToolTip="Выберите тип объявлений" SelectionChanged="ComboBoxType_SelectionChanged"/>
-            <TextBlock Text="Статус:" />
-            <ComboBox x:Name="ComboBoxStatus" Width="110" ToolTip="Выберите статус объявлений" SelectionChanged="ComboBoxStatus_SelectionChanged"/>
-        </WrapPanel>
+        <Button x:Name="AddAd" Grid.Row="1" Width="130" HorizontalAlignment="Left" Content="Создать объявление" Click="AddAd_Click" Margin="25,5,0,5"/>
+        <Button x:Name="DeleteAd" Grid.Row="1" Width="130" HorizontalAlignment="Left" Content="Удалить объявление" Click="DeleteAd_Click" Margin="731,5,0,5"/>
     </Grid>
 </Page>
